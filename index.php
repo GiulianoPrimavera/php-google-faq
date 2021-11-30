@@ -1,26 +1,33 @@
-<?php 
+<?php
 
 $data = [
     [
         "title" => "<h2>Come state implementando la recente decisione della Corte di giustizia dell'Unione europea (CGUE) relativa al diritto all'oblio?</h2>",
-        "paragraph" => "<p>paragrafo</p>"
+        "textSection" => [
+            "<p>paragrafo</p>",
+            "<p>paragrafo</p>",
+            "<p>paragrafo</p>",
+            "<p>paragrafo</p>",
+            "<p>paragrafo</p>",
+        ],
+
     ],
     [
         "title" => "<h2>Come fa Google a proteggere la mia privacy e a tenere le mie informazioni al sicuro?</h2>",
-        "paragraph" => "<p>paragrafo</p>"
+        "textSection" => "<p>paragrafo</p>",
     ],
     [
         "title" => "<h2>Perché il mio account è associato a un paese?</h2>",
-        "paragraph" => "<p>paragrafo</p>"
+        "textSection" => "<p>paragrafo</p>",
     ],
     [
         "title" => "<h2>Come faccio a rimuovere informazioni su di me dai risultati di ricerca di Google?</h2>",
-        "paragraph" => "<p>paragrafo</p>"
+        "textSection" => "<p>paragrafo</p>",
     ],
     [
         "title" => "<h2>Quando faccio clic sui risultati della Ricerca Google, le mie chiavi di ricerca vengono inviate ai siti web?</h2>",
-        "paragraph" => "<p>paragrafo</p>"
-    ]
+        "textSection" => "<p>paragrafo</p>",
+    ],
 ]
 
 ?>
@@ -67,12 +74,20 @@ $data = [
 
     <main>
         <div class="main_container">
-        <?php 
+        <?php
             foreach ($data as $value) {
                 echo $value["title"];
-                echo $value["paragraph"];
+
+                if(gettype($value["textSection"]) === "array"){
+                    foreach ($value["textSection"] as $paragraph) {
+                        echo $paragraph;
+                    }
+                }else{
+                    echo $value["textSection"];
+                }
+
             }
-        ?>
+?>
         </div>
     </main>
 </body>
