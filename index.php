@@ -26,8 +26,8 @@ $data = [
         "textSection" => [
             "<p>Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:</p>",
             "orderedList" => [
-                "<li><p>La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:</p></li>",
-                "<li><p>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.</p></li>",
+                "<p>La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:</p>",
+                "<p>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.</p>",
             ],
             "titleSmall" => "<h3>Stabilire il paese associato al tuo account</h3>",
             "<p>Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.</p>",
@@ -107,8 +107,8 @@ $data = [
                             //allora stampa gli elementi della lista
                             //all'interno di un tag "<ol>"
                             echo "<ol>";
-                            foreach ($paragraph as $listItem) {
-                                echo $listItem;
+                            foreach ($paragraph as $keyOrderedList => $listItem) {
+                                echo "<li>$listItem</li>";
                             }
                             echo "</ol>";
                         }else{
