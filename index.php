@@ -107,7 +107,7 @@ $data = [
                             //allora stampa gli elementi della lista
                             //all'interno di un tag "<ol>"
                             echo "<ol>";
-                            foreach ($paragraph as $keyOrderedList => $listItem) {
+                            foreach ($paragraph as $listItem) {
                                 echo "<li>$listItem</li>";
                             }
                             echo "</ol>";
