@@ -14,11 +14,22 @@ $data = [
     ],
     [
         "title" => "<h2>Come fa Google a proteggere la mia privacy e a tenere le mie informazioni al sicuro?</h2>",
-        "textSection" => "<p>paragrafo</p>",
+        "textSection" => [
+            "<p>Sappiamo che la sicurezza e la privacy sono importanti per te e lo sono anche per noi. Per noi è imperativo offrire un'elevata sicurezza e assicurarti che le tue informazioni sono al sicuro e accessibili quando ne hai bisogno.</p>",
+            "<p>Siamo costantemente al lavoro per garantire un'elevata sicurezza, proteggere la tua privacy e rendere Google ancora più efficace ed efficiente per te. Spendiamo centinaia di milioni di dollari ogni anno per la sicurezza e ci avvaliamo di esperti di fama mondiale in materia di sicurezza dei dati per mantenere le tue informazioni al sicuro. Abbiamo inoltre sviluppato strumenti per la sicurezza e la privacy di facile utilizzo come Google Dashboard, la verifica in due passaggi e Impostazioni annunci. Così, per quanto riguarda le informazioni che condividi con Google, hai il massimo controllo.</p>",
+            "<p>Puoi leggere ulteriori informazioni sulla sicurezza online, incluso come proteggere te e la tua famiglia online, nel <a href='#'>Centro Google per la sicurezza online</a>.</p>",
+            "<p><a href='#'>Scopri</a> quali misure adottiamo per garantire protezione e sicurezza alle tue informazioni personali, lasciando a te il controllo.</p>",
+        ],
     ],
     [
         "title" => "<h2>Perché il mio account è associato a un paese?</h2>",
-        "textSection" => "<p>paragrafo</p>",
+        "textSection" => [
+            "<p>Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:</p>",
+            "orderedList" => [
+                "<li><p>ciao</p></li>",
+                "<li><p>ciao2</p></li>",
+            ]
+        ],  
     ],
     [
         "title" => "<h2>Come faccio a rimuovere informazioni su di me dai risultati di ricerca di Google?</h2>",
@@ -75,19 +86,37 @@ $data = [
     <main>
         <div class="main_container">
         <?php
-foreach ($data as $value) {
-    echo $value["title"];
+            //stampo il titolo contenuto in ogni elemento del data
+            foreach ($data as $value) {
+                echo $value["title"];
+                
+                //se il tipo di elemento alla chiave "textSection" è un array...
+                if (gettype($value["textSection"]) === "array") {
 
-    if (gettype($value["textSection"]) === "array") {
-        foreach ($value["textSection"] as $paragraph) {
-            echo $paragraph;
-        }
-    } else {
-        echo $value["textSection"];
-    }
+                    //...allora stampa i vari elementi dell'array in questione sotto forma di $paragraph
+                    foreach ($value["textSection"] as $key => $paragraph) {
 
-}
-?>
+                        //se la chiave del paragrafo ($paragraph) è "orderedList"...
+                        if($key === "orderedList"){
+
+                            //allora stampa gli elementi della lista
+                            //all'interno di un tag "<ol>"
+                            echo "<ol>";
+                            foreach ($paragraph as $listItem) {
+                                echo $listItem;
+                            }
+                            echo "</ol>";
+                        }else{
+                            //altrimenti stampa il paragrafo
+                            echo $paragraph;
+                        }
+                    }
+                } else {
+                    echo $value["textSection"];
+                }
+
+            }
+        ?>
         </div>
     </main>
 </body>
