@@ -26,10 +26,11 @@ $data = [
         "textSection" => [
             "<p>Il tuo account è associato a un paese (o territorio) nei Termini di servizio per poter stabilire due cose:</p>",
             "orderedList" => [
-                "<li><p>ciao</p></li>",
-                "<li><p>ciao2</p></li>",
+                "<li><p>La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:</p></li>",
+                "<li><p>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.</p></li>",
             ]
         ],  
+        "titleSmall" => "<h3>Stabilire il paese associato al tuo account</h3>"
     ],
     [
         "title" => "<h2>Come faccio a rimuovere informazioni su di me dai risultati di ricerca di Google?</h2>",
@@ -115,6 +116,9 @@ $data = [
                     echo $value["textSection"];
                 }
 
+                if(array_key_exists("titleSmall", $value)){
+                    echo $value["titleSmall"];
+                }
             }
         ?>
         </div>
