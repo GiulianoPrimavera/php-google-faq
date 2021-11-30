@@ -1,0 +1,35 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    border-bottom: 1px solid gray;
+}
+h1{
+    font-size: 30px;
+    padding: 10px;
+}
+
+.navbar_items_container{
+    display: flex;
+}
+.navbar_items{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.navbar_items li{
+    list-style: none;
+}
+.navbar_items li a{
+    display: inline-block;    
+    padding: 20px;
+    text-decoration: none;
+    color: gray;
+}
+.navbar_items li a:focus{
+    border-bottom: 2px solid blue;
+    color: blue;
+}
