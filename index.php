@@ -28,9 +28,13 @@ $data = [
             "orderedList" => [
                 "<li><p>La società consociata Google che offre i servizi, tratta le tue informazioni ed è responsabile del rispetto delle leggi sulla privacy vigenti. Generalmente Google offre i propri servizi per i consumatori tramite una delle due società seguenti:</p></li>",
                 "<li><p>La versione dei termini che regola il nostro rapporto, che può variare in base alle leggi locali.</p></li>",
-            ]
+            ],
+            "titleSmall" => "<h3>Stabilire il paese associato al tuo account</h3>",
+            "<p>Quando crei un nuovo Account Google, lo associamo a un paese in base a dove è stato creato. Per quanto riguarda gli account creati almeno un anno fa, usiamo il paese da cui accedi solitamente ai servizi Google, in genere i servizi in cui hai trascorso più tempo nell'ultimo anno.</p>",
+            "<p>I viaggi frequenti solitamente non influiscono sul paese associato al tuo account. Se ti trasferisci in un altro paese, potrebbe occorrere circa un anno per aggiornare l'associazione del paese.</p>",
+            "<p>Se il paese associato al tuo account non corrisponde al tuo paese di residenza, il motivo potrebbe essere la differenza tra il paese in cui lavori e il paese in cui risiedi, l'installazione di una rete privata virtuale (VPN) per mascherare il tuo indirizzo IP oppure la residenza vicino a un confine territoriale. <a href='#'>Contattaci</a> se ritieni che il paese associato al tuo account sia sbagliato.</p>"
+        
         ],  
-        "titleSmall" => "<h3>Stabilire il paese associato al tuo account</h3>"
     ],
     [
         "title" => "<h2>Come faccio a rimuovere informazioni su di me dai risultati di ricerca di Google?</h2>",
@@ -114,10 +118,6 @@ $data = [
                     }
                 } else {
                     echo $value["textSection"];
-                }
-
-                if(array_key_exists("titleSmall", $value)){
-                    echo $value["titleSmall"];
                 }
             }
         ?>
