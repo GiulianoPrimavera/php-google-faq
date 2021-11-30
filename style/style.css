@@ -36,8 +36,9 @@ h1{
 
 
 .main_container{
-    width: 60%;
+    width: 50%;
     margin: auto;
+    padding-top: 50px;
 }
 
 .main_container h2{
@@ -45,6 +46,12 @@ h1{
     font-weight: 100;
 }
 
+.main_container a{
+    text-decoration: none;
+    color: rgb(0, 119, 255);
+}
 .main_container p{
     padding: 10px 0;
+    font-size: 14px;
+    line-height: 20px;
 }
